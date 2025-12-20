@@ -1,15 +1,16 @@
 class Solution:
-    def moveZeroes(self , nums=[int]):
-        pos = 0
+    def MoveZeroes(self,nums:[int]):
 
-        for i in range(len(nums)):
+        a=0
+
+        for i in range (len(nums)):
             if nums[i]!=0:
-                nums[pos] , nums[i] = nums[i] , nums[pos]
-                pos +=1
+                nums[a],nums[i] = nums[i] , nums[a]
+                a+=1
 
         return nums
-   
-nums = [0,1,0,0,23,3]
-sol = Solution()
-result = sol.moveZeroes(nums)
+
+nums = [0,1,0,8,91,0,0,1,5,0,6,4,9,8,1,0]
+sol=Solution()
+result=sol.MoveZeroes(nums)
 print(result)
