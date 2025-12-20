@@ -2,12 +2,12 @@ class solution:
     def productExceptSelf(self, nums: list[int]):
 
         n = len(nums)
-        result = [1]*n
+        result=[1]*n
 
         left =1 
 
         for i in range  (n):
-            result[i] = left
+            result[i] =  left
             left = left*nums[i]
 
         right = 1
