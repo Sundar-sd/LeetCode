@@ -14,6 +14,5 @@ class Solution:
 
 nums =[1,1,7,7,8,9,9]
 sol = Solution()
-result = sol.removeduplicates(nums)
+result = sol.removeduplicates(nums,)
 print (result)
-            
