@@ -1,23 +1,10 @@
 class Solution:
-    def maxSubArray(self , nums):
-        current_sum = nums[0]
-        best_sum = nums[0]
+    def findMaxAverage(self, nums: list[int], k: int):
+        window_sum = sum(nums[:k])
+        max_sum = window_sum
 
+        for i in range(k, len(nums)):
+            window_sum += nums[i] - nums[i - k]
+            max_sum = max(max_sum, window_sum)
 
-        for i in range(1,len(nums)):
-            if current_sum < 0:
-                current_sum = nums[i]
-            else:
-                current_sum+=nums[i]
-
-            if current_sum > best_sum:
-                best_sum = current_sum
-
-        return best_sum
-
-
-
-nums = [-2,1,-3,4,-1,2,1,-5,4]
-sol = Solution()
-result = sol.maxSubArray(nums)
-print(result)
+        return max_sum / k
