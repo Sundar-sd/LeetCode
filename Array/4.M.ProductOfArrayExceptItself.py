@@ -1,24 +1,25 @@
-class solution:
-    def productExceptSelf(self, nums: list[int]):
-
+from typing import List
+class Solution:
+    def p(self , nums : List[int]):
         n = len(nums)
-        result=[1]*n
+        res = [1]*n
 
-        left =1 
+        preffix = 1
+        for i in range(n):
+            res[i] = preffix
+            preffix *= nums[i]
 
-        for i in range  (n):
-            result[i] =  left
-            left = left*nums[i]
 
-        right = 1
+        suffix = 1
+        for i in range(n-1 ,-1 ,-1):
+            res[i] *= suffix
+            suffix *= nums[i]
 
-        for i in range(n-1,-1,-1):
-            result[i] = result[i] * right
-            right = right * nums[i]
+        return res
 
-        return result
+
 
 nums = [1,2,3,4]
-sol = solution()
-result = sol.productExceptSelf(nums)
-print(result)
+sol = Solution()
+result = sol.p(nums)
+print (result)
