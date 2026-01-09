@@ -14,10 +14,7 @@ class Solution:
         for i in range(n-1 ,-1 ,-1):
             res[i] *= suffix
             suffix *= nums[i]
-
         return res
-
-
 
 nums = [1,2,3,4]
 sol = Solution()
