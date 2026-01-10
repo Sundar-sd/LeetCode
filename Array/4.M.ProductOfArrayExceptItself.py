@@ -1,22 +1,23 @@
 from typing import List
 class Solution:
-    def p(self , nums : List[int]):
+    def ex(self , nums:List[int]):
+
         n = len(nums)
-        res = [1]*n
+        ans = [1]*n
 
-        preffix = 1
+        prefix = 1
         for i in range(n):
-            res[i] = preffix
-            preffix *= nums[i]
+            ans[i] = prefix
+            prefix *= nums[i]
 
-
-        suffix = 1
-        for i in range(n-1 ,-1 ,-1):
-            res[i] *= suffix
-            suffix *= nums[i]
-        return res
-
+        sufix = 1
+        for i in range(n-1 , -1 ,-1):
+            ans[i] *= sufix
+            sufix *= nums[i]
+        
+        return ans 
+    
 nums = [1,2,3,4]
 sol = Solution()
-result = sol.p(nums)
-print (result)
+result = sol.ex(nums)
+print(result)
