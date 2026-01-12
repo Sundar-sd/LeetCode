@@ -15,6 +15,7 @@ class Solution:
             ans[i] *= sufix
             sufix *= nums[i]
         
+        
         return ans 
 sol = Solution()
 print(sol.ex([1,2,3,4]))
