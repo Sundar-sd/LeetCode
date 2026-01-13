@@ -1,21 +1,15 @@
 from typing import List
 class Solution:
-    def ex(self , nums:List[int]):
+    def paei(self  , nums:List[int]):
 
-        n = len(nums)
-        ans = [1]*n
-
-        prefix = 1
-        for i in range(n):
-            ans[i] = prefix
-            prefix *= nums[i]
+        ans = [1]*len(nums)
 
         sufix = 1
-        for i in range(n-1 , -1 ,-1):
-            ans[i] *= sufix
-            sufix *= nums[i]
-        
-        
-        return ans 
+        for j in range(len(nums)-1,-1,-1):
+            ans[j] *= sufix
+            sufix *= nums[j]
+
+        return ans
 sol = Solution()
-print(sol.ex([1,2,3,4]))
+print(sol.paei([1,2,3,4]))
+
